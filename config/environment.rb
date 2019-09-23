@@ -3,6 +3,9 @@ ENV['SINATRA_ENV'] ||= "development"
 require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
+
+### @TODO To move credentails to the .env file
+
 configure :development do
   ActiveRecord::Base.establish_connection(
       adapter: "mysql2",

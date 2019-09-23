@@ -12,6 +12,8 @@ gem 'bcrypt'
 gem 'tux'
 gem 'sinatra-flash'
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+gem "figaro"
+
 
 source :rubygems
 
