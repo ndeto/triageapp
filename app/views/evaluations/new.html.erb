@@ -1,0 +1,20 @@
+<h2>Evaluation for <%= "#{@patient.fname} #{@patient.lname}" %></h2>
+
+<form action="<%= "/patient/#{@patient.id}/evaluations" %>" method="POST">
+  <p><b>Weight:</b> <input type='text' name="weight"></p>
+  <p>
+  <p><b>Blood Pressure:</b> <input type='text' name="bp"></p>
+  <p>
+  <p><b>Category:</b>
+    <select name="category">
+      <% @categories.each do |cat| %>
+      <option value="<%= cat.id %>"><%= "#{cat.name} (#{cat.priority})" %></option>
+      <% end %>
+    </select>
+  </p>
+  <p>
+  <p><input type='submit' value='Add Evaluation'></p>
+</form>
+
+<p><a href='/logout'>Log Out</a></p>
+<p><a href='/patients'>Cancel</a></p>

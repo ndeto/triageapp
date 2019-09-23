@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Triage App</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <a href="/"><img src="/triage.png" alt="triage" id="triage" style="width:150px;height:150px;"></a>
+    <a href="/"><h1>Triage App</h1></a>
+    <br>
+    <% if flash[:message] %>
+      <b><i><p class="message"><pre><%= flash[:message] %></pre></i></b>
+    <% end %>
+  <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<h2> <%= "#{@patient.lname} #{@patient.fname}" %> </h2>
+
+<p>Phone: <%= @patient.phone %></p>
+<p>Username: <%= @patient.username %></p>
+
+<form action="/patients/<%=@patient.id%>/delete" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Patient">
+</form>
+
+<p><a href="/patient/<%= @patient.id %>/evaluations/new">New Evaluation</a></p>
+<p><a href='/patients/<%=@patient.id%>/edit'>Edit Patient</a></p>
+<p><a href='/patients'>See all Patients</a></p>
+<p><a href='/logout'>Log Out</a></p>

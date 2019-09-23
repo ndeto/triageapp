@@ -1,0 +1,21 @@
+<h2> Evaluations for  <%= "#{@patient.fname} #{@patient.lname}" %></h2>
+<br>
+<br>
+<% @evaluations.each do |evaluation| %>
+  <div>
+    <p>Date: <%= evaluation.created_at %></p>
+    <p>Weight: <%= evaluation.weight %></p>
+    <p>Blood Pressure: <%= evaluation.blood_pressure %></p>
+    <p>Category: <%= "#{Category.find(evaluation.category_id).name} Priority: #{evaluation.category_id}" %></p>
+  </div>
+  <hr/>
+
+<% end %>
+
+<a href="/patient/<%= @patient.id %>/evaluations/new"> New Evaluation </a><br>
+<a href="/logout"> Log Out </a>
+<br>
+<br>
+<br>
+
+

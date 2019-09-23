@@ -1,0 +1,21 @@
+<h2> Hi <%= @nurse.username %>!</h2>
+<br>
+<h3>All Patients:</h3>
+<br>
+<% @patients.each do |patient| %>
+  <div>
+    <p>Name of Patient: <a href="/patients/<%= patient.id %>"><%= patient.fname %></a> || <a href="/patient/<%= patient.id %>/evaluations/new">New Evaluation</a></p>
+    <p>Age: <%= patient.lname %></p>
+    <p>Phone: <%= patient.username %></p>
+    <p>Username: <%= patient.phone %></p>
+  </div>
+  <hr/>
+<% end %>
+
+<a href="/patients/new"> Add Patient </a><br>
+<a href="/logout"> Log Out </a>
+<br>
+<br>
+<br>
+
+

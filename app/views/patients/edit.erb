@@ -1,0 +1,16 @@
+<h2>Edit Patient</h2>
+
+<form action="/patient/<%= @patient.id%>" method="POST">
+  <p><b>First Name:</b> <input type='text' name="fname" value="<%= @patient.fname %>"></p>
+  <p>
+  <p><b>Last Name:</b> <input type='text' name="lname" value="<%= @patient.lname %>"></p>
+  <p>
+  <p><b>Phone:</b> <input type='text' name="phone" value="<%= @patient.phone %>"></p>
+  <p>
+  <p><b>User Name:</b> <input type='text' name="username" value="<%= @patient.username %>"></p>
+  <p>
+  <p><input type='submit' value='Edit Patient'></p>
+</form>
+
+<p><a href='/logout'>Log Out</a></p>
+<p><a href='/patients'>Cancel</a></p>
