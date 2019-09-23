@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2019_09_23_040933) do
 
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "priority"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "evaluations", force: :cascade do |t|
+  create_table "evaluations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "patient_id"
     t.string "blood_pressure"
     t.integer "weight"
@@ -27,16 +27,19 @@ ActiveRecord::Schema.define(version: 2019_09_23_040933) do
     t.integer "nurse_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_evaluations_on_category_id"
+    t.index ["nurse_id"], name: "index_evaluations_on_nurse_id"
+    t.index ["patient_id"], name: "index_evaluations_on_patient_id"
   end
 
-  create_table "nurses", force: :cascade do |t|
+  create_table "nurses", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "patients", force: :cascade do |t|
+  create_table "patients", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
     t.string "phone"
@@ -47,4 +50,5 @@ ActiveRecord::Schema.define(version: 2019_09_23_040933) do
     t.index ["nurse_id"], name: "index_patients_on_nurse_id"
   end
 
+  add_foreign_key "patients", "nurses"
 end

@@ -12,7 +12,6 @@ end
 
 # Starting Application
 use Rack::MethodOverride
-use ReviewController
 use NurseController
 run ApplicationController
 use EvaluationsController
